@@ -1,1 +1,3 @@
-# EC500-Miniproject-1
+# EC500
+
+## Miniproject-1
