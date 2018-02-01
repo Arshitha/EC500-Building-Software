@@ -30,16 +30,16 @@ auth.set_access_token(access_token, access_secret)
 api = tweepy.API(auth)
 
 username = sys.argv[1]
-print(username)
+count = sys.argv[2]
 
 tweets = api.user_timeline(screen_name=username,
-                           count=20, include_rts=False,
+                           count=count, include_rts=False,
                            exclude_replies=True)
 last_id = tweets[-1].id
  
 while (True):
     more_tweets = api.user_timeline(screen_name=username,
-                                count=20,
+                                count=count,
                                 include_rts=False,
                                 exclude_replies=True,
                                 max_id=last_id-1)
