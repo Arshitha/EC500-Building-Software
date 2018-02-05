@@ -39,7 +39,7 @@ last_id = tweets[-1].id
  
 while (True):
     more_tweets = api.user_timeline(screen_name=username,
-                                count=count,
+                                count=count ,
                                 include_rts=False,
                                 exclude_replies=True,
                                 max_id=last_id-1)
