@@ -2,8 +2,14 @@ import tweepy
 from tweepy import OAuthHandler
 import json
 import wget
-import sys
 import subprocess
+import sys
+from PIL import Image, ImageDraw, ImageFont
+import glob
+from google.cloud import vision
+from google.cloud.vision import types
+import io
+import os
 
 consumer_key = 'YOUR_CONSUMER_KEY'
 consumer_secret = 'YOUR_CONSUMER_SECRET_KEY'
@@ -31,6 +37,7 @@ api = tweepy.API(auth)
 
 username = sys.argv[1]
 count = sys.argv[2]
+#print(username)
 
 tweets = api.user_timeline(screen_name=username,
                            count=count, include_rts=False,
@@ -39,7 +46,7 @@ last_id = tweets[-1].id
  
 while (True):
     more_tweets = api.user_timeline(screen_name=username,
-                                count=count ,
+                                count=count,
                                 include_rts=False,
                                 exclude_replies=True,
                                 max_id=last_id-1)
@@ -57,9 +64,71 @@ for status in tweets:
         media_files.add(media[0]['media_url'])
 
 subprocess.call("mkdir results", shell=True)
+subprocess.call("mkdir resized", shell=True)
 
 for i, media_file in enumerate(media_files):
     wget.download(media_file, out= "%s/%d.jpg" % ('results', i))
 
-subprocess.call("ffmpeg -i 'results/%d.jpg' -vf scale=320:240 'results/out_%d.jpg' ", shell=True)
-subprocess.call("ffmpeg -r 1 -i 'results/out_%d.jpg' -vcodec libx264 -crf 25  -pix_fmt yuv420p 'results/test.mp4'", shell=True)
+subprocess.call("ffmpeg -i 'results/%d.jpg' -vf scale=320:240 'resized/out_%d.jpg' ", shell=True)
+
+
+font = ImageFont.load_default()
+#ImageFont.truetype("")
+
+
+# Instantiates a client
+client = vision.ImageAnnotatorClient()
+
+
+def get_images():
+    for i, filename in enumerate(glob.glob('resized/*.jpg')): 
+        #print(i, filename)
+        im=Image.open(filename)
+        # file_name.append(im)
+        label_list = []
+        landmark_list = []
+        texts_list = []
+        print('Labels:')
+        # for i in len(file_name):
+        with io.open(filename, 'rb') as image_file:
+            content = image_file.read()
+        image = types.Image(content=content)
+        
+        response1 = client.label_detection(image=image)
+        labels = response1.label_annotations
+        response2 = client.landmark_detection(image=image)
+        landmarks = response2.landmark_annotations
+        response3 = client.text_detection(image=image)
+        texts = response3.text_annotations
+        
+        for text in texts:
+            # print(landmark.description)
+            texts_list.append(text.description)
+        text_string = '**'.join(texts_list)
+        print('Text:')
+        print(text_string)
+        #print('\n')
+        draw = ImageDraw.Draw(im)
+        draw.text((0, 75),text_string,(255,255,255,255),font=font)
+        for label in labels:
+            # print(label.description)
+            label_list.append(label.description)
+        label_string = ' ** ' .join(label_list)
+        print('Labels:')
+        print(label_string)
+        #print('\n')
+        draw = ImageDraw.Draw(im)
+        draw.text((0, 25),label_string,(255,255,255,255),font=font)
+        for landmark in landmarks:
+            # print(landmark.description)
+            landmark_list.append(landmark.description)
+        landmark_string = '**'.join(landmark_list)
+        print('Landmarks:')
+        print(landmark_string)
+        #print('\n')
+        draw = ImageDraw.Draw(im)
+        draw.text((0, 50),landmark_string,(255,255,255,255),font=font)
+        im.save('%s/file_%d.jpg' % ('resized', i))
+
+get_images()
+subprocess.call("ffmpeg -r 1 -i 'resized/file_%d.jpg' -vcodec libx264 -crf 25  -pix_fmt yuv420p 'results/test.mp4'", shell=True)
