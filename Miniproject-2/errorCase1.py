@@ -13,6 +13,8 @@ import os
 
 # Twitter API credentials
 # Input your own credentials
+
+
 consumer_key = 
 consumer_secret = 
 access_key = 
@@ -21,17 +23,22 @@ access_secret =
 #
 twitter_account = "@iamsrhkkhdfdkf"
 
+
 def get_all_tweets(screen_name):
     #authorize twitter, initialize tweepy
     auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
+
     auth.set_access_token(access_key, access_secret)
+
     api = tweepy.API(auth)
     
     #initialize a list to hold all the tweepy Tweets
     alltweets = []    
     
     #make initial request for most recent tweets (200 is the maximum allowed count)
+
     new_tweets = api.user_timeline(screen_name = screen_name,count=10)
+
     
     #save most recent tweets
     alltweets.extend(new_tweets)
@@ -43,7 +50,9 @@ def get_all_tweets(screen_name):
     while len(new_tweets) > 0:
         
         #all subsiquent requests use the max_id param to prevent duplicates
+
         new_tweets = api.user_timeline(screen_name = screen_name,count=10,max_id=oldest)
+
         
         #save most recent tweets
         alltweets.extend(new_tweets)
@@ -81,7 +90,9 @@ def get_all_tweets(screen_name):
 
 def ffmpeg():
     try: 
+
         subprocess.call('ffmpeg -y -framerate 20 -i image%d.JPG -pix_fmt yuv420p -filter:v "setpts=5.0*PTS" output.mp4', shell=True)
+
         print('Transforamtion from images to video done.')
     except (RuntimeError, TypeError,NameError):
         print("Can not create valid video.")
@@ -121,7 +132,6 @@ def googlelabels(description_count = 2):
 		json.dump(outputdesc, outfile, indent = 4, sort_keys = True)
 
 	return outfile
-
 
 if __name__ == '__main__':
     # pass in the username of the account you want to download
