@@ -2,7 +2,7 @@
 
 const myURL = new URL('https://www.goodreads.com/quotes');
 console.log(myURL.hostname);
-console.log(myURL.password)
+//console.log(myURL.password)
 // Prints example.org
 
 //myURL.hostname = 'example.com:82';
@@ -48,7 +48,7 @@ var request = http.request(options, function (res) {
 request.on('error', function (e) {
     console.log(e.message);
 });
-request.end();*/
+request.end();
 
 var satelize = require('satelize');
 var ExternalIP = "52.94.226.87"; // I asume that, you already have external(public)IP
@@ -62,4 +62,14 @@ satelize.satelize({ip: ExtenalIP}, function(err, geoData)
      {
         console.log("ISP Information for "+ ExternalIP+" :"+geoData );
      }
-});
+});*/
+/*var url = "http://www.primaryobjects.com/2012/11/19/parsing-hostname-and-domain-from-a-url-with-javascript/"
+function getHostName(url) {
+    var match = url.match(/:\/\/(www[0-9]?\.)?(.[^/:]+)/i);
+    if (match != null && match.length > 2 && typeof match[2] === 'string' && match[2].length > 0) {
+    return match[2];
+    }
+    else {
+        return null;
+    }
+}*/

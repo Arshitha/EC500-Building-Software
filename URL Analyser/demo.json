@@ -70,7 +70,7 @@
     createdDate: "2018-03-18 21:34:40.000 UTC",
     updatedDate: "2018-03-18 21:34:40.000 UTC"
     },
-    customField1Name: "RegistrarContactEmail",
+    "customField1Name": "RegistrarContactEmail",
     customField1Value: "abusecomplaints@markmonitor.com",
     registrarName: "MarkMonitor, Inc.",
     registrarIANAID: "292",
