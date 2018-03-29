@@ -5,25 +5,22 @@
   "name": "Getting started example",
   "description": "This extension allows the user to change the background color of the current page.",
   "version": "1.0",
-
-  "app":{
-    "background": {
-      "scripts": ["main.js"]
-    }},
   "browser_action": {
     "default_icon": "icon.png",
     "default_popup": "popup.html",
+    "scripts": ["jquery.min.js", "popup.js"],
     "default_title": "URL Analyser"
   },
-  "key":"ggabknlcajaeplnaambbdaaaikihglmb",
   "permissions": [
     "activeTab",
-    "storage",
-    "identity","https://accounts.google.com/*", "https://www.googleapis.com/*"
+    "storage"
   ],
-  "oauth2": {
-    "client_id": "595055972445-crql91gcresgs0r40jtbqjjg6mp6v2ll.apps.googleusercontent.com",
-    "scopes": [
-      "https://www.googleapis.com/auth/plus.login"
-    ]}
+  "content_scripts": [{
+    "matches": ["<all_urls>"],
+    "js": ["jquery.min.js"],
+    "run_at": "document_end"
+}],
+  "externally_connectable": {
+    "matches": ["https://homework2-d7436.firebaseapp.com/#login"]
+}
 }

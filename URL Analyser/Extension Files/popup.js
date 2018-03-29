@@ -125,3 +125,12 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+$(document).ready(function() {
+  $('signIn').click(function() {
+    alert('test');
+      var newURL = "https://pause.trixster.xyz/#";
+      chrome.tabs.create({
+          url: newURL
+      });
+  });
+});

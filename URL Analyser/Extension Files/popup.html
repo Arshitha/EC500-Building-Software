@@ -7,6 +7,8 @@
 <html>
   <head>
     <title>URL Analyser</title>
+    <script src="jquery.min.js"></script>
+    <script src="popup.js"></script>
     <style type="text/css">
       body {
         margin: 10px;
@@ -31,38 +33,25 @@
       - [1]: https://developer.chrome.com/extensions/contentSecurityPolicy
     -->
     <script src="popup.js"></script>
-    <script src="identity.js"></script>
-    <script src="sample_support.js"></script>
   </head>
-
-  <body>
-    <h1>URL Analyser</h1>
-    <div>
-      <h2>Hello Class!</h2>
-      <p>Love,
-      Arshitha and Nidhi</p>
-    </div>
-    <div class="flows">
-      <h2>OAuth on Google properties</h2>
-      <div class="flow">
-        <button id="signin">Sign in</button>
-        <button id="getxhr" disabled>Get personal data</button>
-        <button id="revoke" disabled>Revoke token</button>
-        <div id="user_info"></div>
+  <style>
+      a.button {
+      -webkit-appearance: button;
+      -moz-appearance: button;
+      appearance: button;
+  
+      text-decoration: none;
+      color: initial;
+    } 
+    </style>
+    <body>
+      <h1>URL Analyser</h1>
+      <div class="flows">
+        <h2>Authentication</h2>
+        <div class="flow">
+          <a id = "signIn" href="https://homework2-d7436.firebaseapp.com/#login" class="button">Sign in</a>
+          <div id="user_info"></div>
+        </div>
       </div>
-    </div>
-    <div class="log">
-      <textarea id="__sample_support_logarea" disabled></textarea>
-   </div>
-    <!-- <div id="container">
-      <span>Choose a color</span>
-      <select id="dropdown">
-        <option selected disabled hidden value=''></option>
-        <option value="white">White</option>
-        <option value="pink">Pink</option>
-        <option value="green">Green</option>
-        <option value="yellow">Yellow</option>
-      </select>
-    </div> -->
   </body>
 </html>

@@ -1,4 +1,6 @@
 var express = require('express');
+const fs = require('fs');
+
 var request = require('request');
 var cheerio = require('cheerio');
 var app     = express();
@@ -20,10 +22,23 @@ for (i =0; i<listURL.length; i++){
             console.log('Updated Date:', parsedData.WhoisRecord.updatedDate);
             console.log('Registrant details: ', parsedData.WhoisRecord.registrant) // Print the HTML for the Google homepage.
             console.log("##################################################################################")
+            const content = JSON.stringify(parsedData);
+            fs.appendFile("output.json", content, 'utf8', function (err) {
+                if (err) {
+                    return console.log(err);
+                }
+            
+                console.log("The file was saved!");
+            }); 
 
         }
 });
 }
+
+
+
+
+
 
 
 

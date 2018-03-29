@@ -1,0 +1,6 @@
+Flask
+yajl
+gunicorn
+requests
+python-firebase
+SQLAlchemy

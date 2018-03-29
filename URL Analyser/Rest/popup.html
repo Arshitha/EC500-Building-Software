@@ -5,6 +5,16 @@
     <script src="identity.js"></script>
     <script src="sample_support/sample_support.js"></script>
   </head>
+  <style>
+    a.button {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+
+    text-decoration: none;
+    color: initial;
+  } 
+  </style>
   <body>
     <div class="header">
       <h1>Identity API</h1>
@@ -16,11 +26,9 @@
       <hr>
     </div>
     <div class="flows">
-      <h2>OAuth on Google properties</h2>
+      <h2>Authentication</h2>
       <div class="flow">
-        <button id="signin">Sign in</button>
-        <button id="getxhr" disabled>Get personal data</button>
-        <button id="revoke" disabled>Revoke token</button>
+        <a href="login.html" class="button">Sign in</a>
         <div id="user_info"></div>
       </div>
     </div>

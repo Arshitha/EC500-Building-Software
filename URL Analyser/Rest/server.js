@@ -13,16 +13,16 @@ request(url, function(error, response, html){
     if(!error){
         var $ = cheerio.load(html);
 
-    var title, release, rating;
-    var json = { title : "", release : "", rating : ""};
+    var quote, author;
+    var json = { quote : "", author : ""};
 
     $('.header').filter(function(){
         var data = $(this);
-        title = data.children().first().text();            
-        release = data.children().last().children().text();
+        quote = data.children().first().text();            
+        author = data.children().last().children().text();
 
-        json.title = title;
-        json.release = release;
+        json.quote = quote;
+        json.author = author;
     })
 
     $('.star-box-giga-star').filter(function(){
