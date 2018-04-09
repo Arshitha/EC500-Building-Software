@@ -17,8 +17,16 @@ chrome.runtime.onInstalled.addListener(function() {
     });
 });
 // Execute the content.js script
-chrome.pageAction.onClicked.addListener(function(tab) {
+/*chrome.pageAction.onClicked.addListener(function(tab) {
     chrome.tabs.executeScript(null, {
         file: ["jquery.min.js"]
     });
+});*/
+/*chrome.tabs.getCurrent(function(tab){
+    console.log(tab.url);
+}
+);*/
+
+chrome.tabs.query({currentWindow: true, active: true}, function(tabs){
+    console.log(tabs[0].url);
 });

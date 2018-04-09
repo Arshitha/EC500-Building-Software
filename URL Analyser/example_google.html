@@ -1,0 +1,57 @@
+<html>
+  <head>
+    <script src="output.json"></script>
+    <script src="mydata.js"></script>
+    <script src="myhashmap.js"></script>
+    
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+
+    // //#######
+    // var express = require('express');
+    // var request = require('request'); 
+    
+    // //#######
+      google.charts.load('current', {'packages':['timeline']});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var container = document.getElementById('timeline');
+        var chart = new google.visualization.Timeline(container);
+        var dataTable = new google.visualization.DataTable();
+
+        dataTable.addColumn({ type: 'string', id: 'President' });
+        dataTable.addColumn({ type: 'date', id: 'Start' });
+        dataTable.addColumn({ type: 'date', id: 'End' });
+
+        var rowsList = new Array();
+        for(j=0 ; j<orgNames.length ; j++){
+          //var startDate = new Date(createdDateMap[orgNames[j]].substr(0,4), createdDateMap[orgNames[j]].substr(5,7), createdDateMap[orgNames[j]].substr(8,10))
+          //console.log(startDate)
+          //var endDate =  new Date(createdDateMap[orgNames[j]].substr(0,4), createdDateMap[orgNames[j]].substr(5,7), createdDateMap[orgNames[j]].substr(8,10))
+          //console.log(endDate)
+          var startYear = parseInt(createdDateMap[orgNames[j]].substr(0,4));
+          var startMonth = parseInt(createdDateMap[orgNames[j]].substr(5,7));
+          var startDay = parseInt(createdDateMap[orgNames[j]].substr(8,10));
+          console.log(startYear, startMonth, startDay)
+          rowsList.push([orgNames[j], new Date(startYear, startMonth, startDay),new Date(startYear, startMonth, startDay)])
+      }
+        console.log(rowsList)
+        dataTable.addRows(rowsList)
+         // ['Free Code Camp', new Date(2018, 04, 08), new Date(2018, 04, 09)],
+          //['Free', new Date(2017, 04, 08), new Date(2017, 04, 09)]]);
+        
+        chart.draw(dataTable);
+      }
+      var mydata = JSON.parse(output);
+      console.log(mydata)
+
+          
+    </script>
+  </head>
+  <body onload="load()">
+      
+          <p>askyb - Load JSON File Locally by Javascript Without JQuery</p>
+
+    <div id="timeline" style="height: 180px;"></div>
+  </body>
+</html>

@@ -7,8 +7,12 @@
   "dependencies": {
     "cheerio": "latest",
     "express": "latest",
+    "mongodb": "^3.0.5",
     "mongoose": "^5.0.10",
     "request": "latest",
-    "satelize": "^0.2.0"
+    "satelize": "^0.2.0",
+    "xml2js": "^0.4.19",
+    "xml2json": "^0.11.2",
+    "xmldom": "^0.1.27"
   }
 }
