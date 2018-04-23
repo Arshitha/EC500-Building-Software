@@ -13,3 +13,17 @@ All of the files pertaining to the project can be found in the URL Analyser fold
 **USING THE LIBRARY**: For testing, you will need to add your API keys before running it. While running it, you'll need to give in two arguments, i.e., the twitter handle and the count (no. of tweets to be scanned). Resized and annotated images will be saved in the "resized" folder. The originally downloaded images along with the final video will be saved in the "results" folder.
 
 Example: python code_withoutKeys.py iamsrk 20
+
+
+## Miniproject-2
+
+## Miniproject-3
+
+
+## Miniproject-4
+
+### Phase 1
+
+### Phase 2
+
+### Phase 3
