@@ -6,7 +6,7 @@ var listURL = new Array();
  * @param {function(string)} callback called when the URL of the current tab
  *   is found.
  */
-function getCurrentTabUrl(callback) {
+function getAllTabUrl(callback) {
   // Query filter to be passed to chrome.tabs.query - see
   // https://developer.chrome.com/extensions/tabs#method-query
   var queryInfo = {
@@ -25,7 +25,9 @@ function getCurrentTabUrl(callback) {
         listURL.push(tabs[i].url)
         // format html
         var html = '<li><a href=' + listURL[i]+ " target='_blank'>" + listURL[i] + '</a><br/></li>';
-        document.getElementById("div").innerHTML = "<h2>Saved pages</h2>";
+
+        document.getElementById("div").innerHTML = "<h2>Current Session Pages</h2>";
+
         var list = document.getElementById("list");
         var newcontent = document.createElement('LI');
         newcontent.innerHTML = html;
@@ -34,7 +36,8 @@ function getCurrentTabUrl(callback) {
             list.appendChild(newcontent.firstChild);
         }
     }
-    console.log(listURL[0])
+
+    //console.log(listURL[0])
     //#################################################################################################
     // format html
     //var html = '<li><a href=' + listURL[0]+ " target='_blank'>" + listURL[0] + '</a><br/></li>';
@@ -48,9 +51,11 @@ function getCurrentTabUrl(callback) {
     //newcontent.innerHTML = html;
 
     // while loop to remember previous content and append the new ones
-    while (newcontent.firstChild) {
-        list.appendChild(newcontent.firstChild);
-    }
+
+    //while (newcontent.firstChild) {
+    //    list.appendChild(newcontent.firstChild);
+    //}
+
     //#################################################################################################
     
 
@@ -91,14 +96,34 @@ function getCurrentTabUrl(callback) {
 // chrome.storage.local allows the extension data to be synced across multiple
 // user devices.
 document.addEventListener('DOMContentLoaded', () => {
-  getCurrentTabUrl((url) => {
+  getAllTabUrl((url) => {
     console.log(listURL)
   });
 
-  var button = document.getElementById('button');
-  button.addEventListener('click', function() {
-    addLink();
+  // function toObject(listURL) {
+  //   var listObj = {};
+  //   for (var i = 0; i < listURL.length; ++i)
+  //     listObj[i] = arr[i];
+  //   return listObj;
+  // }
+  
+  //var listURL = toObject(listURL)
+
+  $(document).ready(function(){
+    $('body').on('click', 'a', function(){
+      chrome.tabs.create({url: $(this).attr('href')});
+    return false;
     });
+  });
+
+chrome.storage.sync.set({"List URLs": listURL}, function() {
+  console.log('Value is set to ' + listURL);
+});
+key = "List URLs"
+chrome.storage.sync.get([key], function(result) {
+  console.log('Value currently is ' + result.key);
+});
+
 });
 
 // var MongoClient = require('mongodb').MongoClient;
@@ -110,6 +135,10 @@ document.addEventListener('DOMContentLoaded', () => {
 //   db.close();
 // });
 // Master[0].createdDate
-$.getJSON("output.json", function(json) {
-  console.log(json); // this will show the info it in firebug console
-});
+
+// $.getJSON("output.json", function(json) {
+//   console.log(json); // this will show the info it in firebug console
+// });
+
+
+
