@@ -10,7 +10,7 @@ A quick summary of the quality of your surfing activities and different metrics 
 
 ### System Architecture
 
-<img width="1210" alt="screen shot 2018-05-01 at 2 16 11 pm" src="https://user-images.githubusercontent.com/10297203/39486479-5042542e-4d4a-11e8-91dd-e7650ef44ac2.png">
+<img width="880" alt="screen shot 2018-05-01 at 2 47 27 pm" src="https://user-images.githubusercontent.com/10297203/39487909-a549289a-4d4e-11e8-90ba-0905f66fa456.png">
 
 ### Minimum Viable Product
 
