@@ -21,9 +21,9 @@ A quick summary of the quality of your surfing activities and different metrics 
 
 If you already have homebrew, then the following command will install node. 
 
-brew install node
+```brew install node```
 
-(In case you want uninstall it later. Then here is the command: "brew uninstall node")
+(In case you want uninstall it later. Then here is the command: ```brew uninstall node```)
 
 ##### MongoDB 
 
@@ -33,17 +33,15 @@ brew install node
 3. Go to chrome://extensions/ on your chrome browser
 4. Click on load unpacked on the top navigation bar
 5. Find the folder in path to/URL_Analyser/ExtensionFiles and click "Select"
-6. You should see an icon like next to your address bar. 
-
-<img width="43" alt="screen shot 2018-05-02 at 10 12 02 pm" src="https://user-images.githubusercontent.com/10297203/39557496-0ad1f40a-4e56-11e8-9f36-bd0ca2cfb5e5.png">
-
-7. If you click on it, you should be able to see a popup window with all of your current tabs listed
+6. If you click on it, you should be able to see a popup window with all of your current tabs listed
 
 *Before clicking on save session, you'll need to have a local nodejs server running.*
 
-8. From the ExtensionFiles directory of the git repo, run node app.js from your terminal
-9. Go back to the extension and click on "Save Session"
-10. From the terminal, run python finalScript.py 
+7. From the ExtensionFiles directory of the git repo, run ```node app.js``` from your terminal
+8. Go back to the extension and click on "Save Session"
+9. From the terminal, run ```python finalScript.py```
+
+For any other installation and other queries, you can mail me at arshitha@bu.edu
 
 ## Miniproject-1
 
@@ -53,7 +51,7 @@ brew install node
 
 **USING THE LIBRARY**: For testing, you will need to add your API keys before running it. While running it, you'll need to give in two arguments, i.e., the twitter handle and the count (no. of tweets to be scanned). Resized and annotated images will be saved in the "resized" folder. The originally downloaded images along with the final video will be saved in the "results" folder.
 
-Example: python code_withoutKeys.py iamsrk 20
+Example: ```python code_withoutKeys.py iamsrk 20```
 
 ## Miniproject-2
 
