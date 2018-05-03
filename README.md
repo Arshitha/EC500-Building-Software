@@ -16,20 +16,34 @@ A quick summary of the quality of your surfing activities and different metrics 
 
 ### Intructions to run and test 
 
+#### Prerequisites
+##### Nodejs Server on local (for Mac Users):
+
+If you already have homebrew, then the following command will install node. 
+
+brew install node
+
+(In case you want uninstall it later. Then here is the command: "brew uninstall node")
+
+##### MongoDB 
+
+#### Extension 
 1. Clone the repository to your local machine
 2. You could delete all of the folders except "URL_Analyser" (not "URL Analyser")
 3. Go to chrome://extensions/ on your chrome browser
 4. Click on load unpacked on the top navigation bar
 5. Find the folder in path to/URL_Analyser/ExtensionFiles and click "Select"
-6. You should see an icon like below next to your address bar. 
+6. You should see an icon like next to your address bar. 
 
-screenshot ne
-7. If you click on it, you should be able to see a popup window with all of your current tabs listed 
+<img width="43" alt="screen shot 2018-05-02 at 10 12 02 pm" src="https://user-images.githubusercontent.com/10297203/39557496-0ad1f40a-4e56-11e8-9f36-bd0ca2cfb5e5.png">
 
-Before clicking on save session, you'll need to have a local node js server running. Instructions 
-add online tutorial links or just give brief commands. 
+7. If you click on it, you should be able to see a popup window with all of your current tabs listed
 
-nodejs, mongodb and finalScript.py
+*Before clicking on save session, you'll need to have a local nodejs server running.*
+
+8. From the ExtensionFiles directory of the git repo, run node app.js from your terminal
+9. Go back to the extension and click on "Save Session"
+10. From the terminal, run python finalScript.py 
 
 ## Miniproject-1
 
@@ -41,10 +55,11 @@ nodejs, mongodb and finalScript.py
 
 Example: python code_withoutKeys.py iamsrk 20
 
-
 ## Miniproject-2
 
+
 ## Miniproject-3
+
 
 
 ## Miniproject-4
