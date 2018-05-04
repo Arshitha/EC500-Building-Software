@@ -6,7 +6,7 @@ All of the files pertaining to the project can be found in the URL Analyser fold
 
 ### Product Description
 
-A quick summary of the quality of your surfing activities and different metrics to give you a complete idea about the information contained in the websites you visit. We want to help you determine whether you are accessing authentic information overall, from webpages which have been created and updated regularly so you can ensure that the source of the information you consume is authentic and give you the opportunity to fine-tune and improve the way you surf the internet.
+A quick summary of the quality of your surfing activities and different metrics to give you a complete idea about the information contained in the websites you visit. We want to help you determine whether you are accessing authentic information overall, from webpages which have been created and updated regularly so you can ensure that the source of the information you consume is authentic and give you the opportunity to fine-tune and improve the quality of way you surf the internet.
 
 ### System Architecture
 
