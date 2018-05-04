@@ -1,0 +1,35 @@
+[debug] [2017-11-17T01:19:13.690Z] ----------------------------------------------------------------------
+[debug] [2017-11-17T01:19:13.692Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
+[debug] [2017-11-17T01:19:13.692Z] CLI Version:   3.15.0
+[debug] [2017-11-17T01:19:13.692Z] Platform:      darwin
+[debug] [2017-11-17T01:19:13.692Z] Node Version:  v8.9.1
+[debug] [2017-11-17T01:19:13.693Z] Time:          Thu Nov 16 2017 20:19:13 GMT-0500 (EST)
+[debug] [2017-11-17T01:19:13.693Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2017-11-17T01:19:13.704Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-11-17T01:19:13.704Z] > authorizing via signed-in user
+[debug] [2017-11-17T01:19:13.706Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/homework2-d7436  
+ Thu Nov 16 2017 20:19:13 GMT-0500 (EST)
+[debug] [2017-11-17T01:19:14.041Z] <<< HTTP RESPONSE 200
+[debug] [2017-11-17T01:19:14.042Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/homework2-d7436/tokens  
+ Thu Nov 16 2017 20:19:14 GMT-0500 (EST)
+[debug] [2017-11-17T01:19:14.517Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/Users/arshitha/Desktop/Sem 1/EC601/Homework2-Resume-EC601'...
+[info] 
+[debug] [2017-11-17T01:19:14.521Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/homework2-d7436  
+ Thu Nov 16 2017 20:19:14 GMT-0500 (EST)
+[debug] [2017-11-17T01:19:14.765Z] <<< HTTP RESPONSE 200
+[debug] [2017-11-17T01:19:14.765Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/236621934101/clients/_:getWebAppConfig  
+ Thu Nov 16 2017 20:19:14 GMT-0500 (EST)
+[debug] [2017-11-17T01:19:15.143Z] <<< HTTP RESPONSE 200
+[warn] ⚠  hosting: Port 5000 is not available. Trying another port...
+[debug] [2017-11-17T01:19:15.161Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/homework2-d7436  
+ Thu Nov 16 2017 20:19:15 GMT-0500 (EST)
+[debug] [2017-11-17T01:19:15.326Z] <<< HTTP RESPONSE 200
+[debug] [2017-11-17T01:19:15.327Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/236621934101/clients/_:getWebAppConfig  
+ Thu Nov 16 2017 20:19:15 GMT-0500 (EST)
+[debug] [2017-11-17T01:19:15.666Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] ✔  hosting: Local server: http://localhost:5004
+

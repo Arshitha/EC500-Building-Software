@@ -1,0 +1,35 @@
+<!doctype html>
+<!--
+ This page is shown when the extension button is clicked, because the
+ "browser_action" field in manifest.json contains the "default_popup" key with
+ value "popup.html".
+ -->
+<html>
+  <head>
+    <title>URL Analyser</title>
+    <script src="jquery.min.js"></script>
+    <script src="newPopup.js"></script>
+    <!-- <link rel="stylesheet" href="popup.css"> -->
+  </head>
+  <body>
+    <h1 class= "title">URL Analyser</h1>
+<!-- code snippet found on stackoverflow -->
+    <div id="div">No content yet! Click the button to add the link of the current website!</div>
+    <div><ul id="list"></ul></div>
+    <br/>
+
+
+    <!-- <div>
+      <form action="" method="GET">
+        <input  type = "text" name="name" placeholder="Session Name"><br>
+        <input id="auth" type = "submit" value="go">
+      </form>
+      <button><a href="https://homework2-d7436.firebaseapp.com/">Visualization</a></button>
+    </div> -->
+    <div id="save">
+      <br>
+      <button id="save_button">Save Session </button>
+    </div>
+
+  </body>
+</html>
