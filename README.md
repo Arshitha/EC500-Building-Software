@@ -54,6 +54,7 @@ For any other installation and other queries, you can mail me at arshitha@bu.edu
 Example: ```python code_withoutKeys.py iamsrk 20```
 
 ## Miniproject-2
+Code Review of Miniproject-1 of another peer. 
 
 
 ## Miniproject-3
@@ -61,9 +62,13 @@ Example: ```python code_withoutKeys.py iamsrk 20```
 
 
 ## Miniproject-4
+Database Project 
 
 ### Phase 1
+MongoDB set up and airport.json importing using a python script
 
 ### Phase 2
+Designing the database in order to fit the needs of the objectives of Miniproject-1. 
 
 ### Phase 3
+Analytics (yet to be done)
