@@ -92,7 +92,7 @@ app.post("/log", function (req, res) {
         //const myURL = new URL(listURL[j]);
         const myURL = new URL(listURL[j]);
         
-        reqURL = "https://www.whoisxmlapi.com/whoisserver/WhoisService?apiKey=at_Bn4ROUo0Erl3CRjNsrQS2IkPOWCSq&domainName=" + listURL[j] //+"&outputFormat=JSON"
+        reqURL = "https://www.whoisxmlapi.com/whoisserver/WhoisService?apiKey=at_dH1KJ5rsc1s4e86HZtKHPHw8iFt9s&domainName=" + listURL[j] //+"&outputFormat=JSON"
         //console.log(listURL[j])
     
         request(reqURL, function (error, response, body) {
