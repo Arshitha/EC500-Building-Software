@@ -71,4 +71,4 @@ MongoDB set up and airport.json importing using a python script
 Designing the database in order to fit the needs of the objectives of Miniproject-1. 
 
 ### Phase 3
-Analytics (yet to be done)
+Analytics 
