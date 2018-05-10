@@ -38,26 +38,7 @@ function getAllTabUrl(callback) {
         }
     }
 
-    //console.log(listURL[0])
-    //#################################################################################################
-    // format html
-    //var html = '<li><a href=' + listURL[0]+ " target='_blank'>" + listURL[0] + '</a><br/></li>';
-
-    // change the text message
-    //document.getElementById("div").innerHTML = "<h2>Saved pages</h2>";
-
-    // get to unordered list and create space for new list item 
-    //var list = document.getElementById("list");
-    //var newcontent = document.createElement('LI');
-    //newcontent.innerHTML = html;
-
-    // while loop to remember previous content and append the new ones
-
-    //while (newcontent.firstChild) {
-    //    list.appendChild(newcontent.firstChild);
-    //}
-
-    //#################################################################################################
+  
     
 
     
@@ -101,15 +82,6 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log(listURL)
   });
 
-  // function toObject(listURL) {
-  //   var listObj = {};
-  //   for (var i = 0; i < listURL.length; ++i)
-  //     listObj[i] = arr[i];
-  //   return listObj;
-  // }
-  
-  //var listURL = toObject(listURL)
-
   $(document).ready(function(){
     $('body').on('click', 'a', function(){
       chrome.tabs.create({url: $(this).attr('href')});
@@ -117,19 +89,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  var test = "testing"
-  function sendingList(){
-    xj.open("POST", "http://localhost:1200/log", true);
-    //console.log("here 1")
-    //xj.setRequestHeader("Content-Type", "application/text");
-    //console.log("here 2")
-    xj.setRequestHeader("Content-Type", "application/json");
-    xj.send(JSON.stringify({ action: listURL}));
-    //console.log("here 3")
-    xj.onreadystatechange = function () { if (xj.readyState == 4 && xj.status == 200) { console.log("something's happening"); console.log(xj.responseText); } else{console.log("unsucessful")} }
-    //console.log("here 4s")
+  // var test = "testing"
+  // function sendingList(){
+  //   xj.open("POST", "http://localhost:1200/log", true);
+  //   xj.setRequestHeader("Content-Type", "application/json");
+  //   xj.send(JSON.stringify({ action: listURL}));
+  //   xj.onreadystatechange = function () { if (xj.readyState == 4 && xj.status == 200) { console.log("something's happening"); console.log(xj.responseText); } else{console.log("unsucessful")} }
+  //   //console.log("here 4s")
     
-  }
+  // }
 
   function sendingList2(){
     $.ajax({
@@ -143,16 +111,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   
   $(document).ready(function(){
-    // $('#auth').on('click',function(){console.log()})
     $('#save_button').on('click', sendingList2)
   });
-// chrome.storage.sync.set({"List URLs": listURL}, function() {
-//   console.log('Value is set to ' + listURL);
-// });
-// key = "List URLs"
-// chrome.storage.sync.get([key], function(result) {
-//   console.log('Value currently is ' + result.key);
-// });
 
 });
 
