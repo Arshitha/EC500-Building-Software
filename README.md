@@ -1,8 +1,6 @@
 # EC500C1 Building Software
 
 ## Project: URL Analyser
-### Documentation still in progress. 
-All of the files pertaining to the project can be found in the URL Analyser folder. 
 
 ### Product Description
 
@@ -54,15 +52,18 @@ For any other installation and other queries, you can mail me at arshitha@bu.edu
 Example: ```python code_withoutKeys.py iamsrk 20```
 
 ## Miniproject-2
-Code Review of Miniproject-1 of another peer. 
+**AIM**: Build test scenarios such that a peers Miniproject-1 breaks in those scenarios. Document the observations made. 
 
+**FILES STRUCTURE**: Each script in the folder Miniproject-2 refers to one error case under which the peer's code breaks and throws errors. 
 
 ## Miniproject-3
 
+**AIM**: Understanding and reviewing MoviePy software.
 
+**FILES STRUCTURE**: Contains an example script that ran MoviePy and some of it's use cases. Detailed my observations in the report. Flowchart is the system architecture of MoviePy. 
 
 ## Miniproject-4
-Database Project 
+**AIM**: Understanding setting up and designing a database for a software using MongoDB. Also, detail the differences between SQL and MongoDB by performing phase 1 activity using SQL and MongoDB.  
 
 ### Phase 1
 MongoDB set up and airport.json importing using a python script
